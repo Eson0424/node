@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <span id="info"></span>
+  <button id="btn">click me</button>
+  <script>
+    let info = document.querySelector('#info');
+    document.querySelector('#btn').onclick = function() {
+      // 发起ajax请求
+      let xhr = new XMLHttpRequest(); //
+      xhr.open('get', '/test'); // 
+      xhr.send()
+        // 处理响应
+      xhr.onreadystatechange = function() {
+        console.log(xhr.readyState); // 1:服务器连接已建立  2:请求已接收  3:请求处理中  4:请求已完成，且响应已就绪
+        console.log(xhr.responseText); // response
+        let arr = xhr.responseText.split('|');
+        info.innerHTML = arr[arr.length - 2];
+      }
+    }
+  </script>
+</body>
+
+</html>
