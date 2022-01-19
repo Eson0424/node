@@ -71,7 +71,7 @@ app.use(router)
 // 错误处理
 app.use((err, req, res, next) => {
   // res.render('error.html')
-  res.send('<h1><a href="/">错误页面，放哪会首页</a></h1>')
+  res.send('<h1><a href="/">错误页面，返回首页</a></h1>')
 })
 
 // 监听端口

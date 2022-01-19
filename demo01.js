@@ -1,3 +1,13 @@
+// nginx 代理
+// location /apis {
+//   rewrite ^/apis/(.*)$ / break; #重写url
+//   proxy_pass http://api.douban.com;
+// }
+
+//  通过nginx返回的页面中，发起apis开头的请求会被拦截
+
+
+
 // 需求：接收命令行参数，根据该目录，读取该目录下的所有文件并输出---遍历文件夹
 
 // 步骤：
